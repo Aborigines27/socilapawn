@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout รายละเอียดนิคม - สอค. (ปรับขนาดอักษรได้)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>รายละเอียดนิคม - สำนักงานธนานุเคราะห์ (ปรับขนาดอักษรได้)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,20 +12,19 @@
     <header>
         <div class="container top-header-flex">
             <div class="font-resizer">
-                <span>ขนาด:</span>
+                <span>ขนาดอักษร:</span>
                 <button onclick="setFontSize('small')" title="ลดขนาด">ก-</button>
                 <button onclick="setFontSize('normal')" title="ขนาดปกติ">ก</button>
                 <button onclick="setFontSize('large')" title="เพิ่มขนาด">ก+</button>
             </div>
-            
             <div>คำถามที่พบบ่อย | ติดต่อเรา | Search | TH 🇹🇭</div>
         </div>
     </header>
 
     <div class="main-header">
         <div class="container header-flex">
-            <div class="logo"><img src="https://via.placeholder.com/150x60?text=LOGO" height="60" alt="Logo"></div>
-            <a href="#" class="login-btn">เข้าสู่ระบบ ⌵</a>
+            <div class="logo"><img src="https://via.placeholder.com/180x60?text=LOGO" alt="Logo"></div>
+            <a href="login.html" class="login-btn">เข้าสู่ระบบ ⌵</a>
         </div>
     </div>
 
@@ -34,7 +33,7 @@
     </section>
 
     <nav class="breadcrumb">
-        <a href="index.html"><span>หน้าหลัก</span></a> &nbsp;/&nbsp; รายละเอียด
+        <a href="index.html">หน้าหลัก</a> &nbsp;/&nbsp; <span class="current">รายละเอียด</span>
     </nav>
 
     <main class="container">
@@ -43,8 +42,8 @@
                 นิคมสร้างตนเองตากฟ้า<br>จังหวัดนครสวรรค์
             </div>
             <div class="col-8 details-right">
-                <p>ชื่อผลิตภัณฑ์/บริการ : ยาหม่องไพล , น้ำมันไพล , ผงพอกเข่า , นวดผ่อนคลาย</p>
-                <p>เบอร์โทรศัพท์ : 02-281-7500</p>
+                <p class="highlight">ชื่อผลิตภัณฑ์/บริการ : ยาหม่องไพล , น้ำมันไพล , ผงพอกเข่า , นวดผ่อนคลาย</p>
+                <p class="highlight">เบอร์โทรศัพท์ : 02-281-7500</p>
                 
                 <ul class="bullet-list">
                     <li>ขับเคลื่อนตามแนวทาง “สร้างงาน สร้างรายได้ พัฒนาคุณภาพชีวิตคนเปราะบาง” เพื่อส่งเสริมและสนับสนุนให้สมาชิกนิคมและราษฎร สามารถประกอบอาชีพเป็นหลักแหล่ง ตลอดจนพัฒนาคุณภาพชีวิต ทั้งทางเศรษฐกิจ สังคม และสิ่งแวดล้อม ควบคู่ไปกับการพัฒนาทุนมนุษย์ในศตวรรษที่ 21 และแก้ไขปัญหาความยากจนข้ามรุ่นให้กับสมาชิก</li>
@@ -71,10 +70,10 @@
 
     <footer>
         <div class="container">
-            <div class="row-12">
+            <div class="row-12" style="padding-bottom: 30px;">
                 <div class="col-md-4">
                     <h3>เกี่ยวกับเรา</h3>
-                    <p>สำนักงานธนานุเคราะห์</p>
+                    <p>สำนักงานธนานุเคราะห์<br>ให้บริการด้วยความโปร่งใส ยุติธรรม และเป็นที่พึ่งของประชาชน</p>
                 </div>
                 <div class="col-md-4">
                     <h3>ติดต่อเรา</h3>
@@ -83,16 +82,14 @@
                 <div class="col-md-4">
                     <h3>ลิงก์ที่เกี่ยวข้อง</h3>
                     <ul>
-                        <li><a href="#">- นโยบายความเป็นส่วนตัว</a></li>
-                        <li><a href="#">- แผนผังเว็บไซต์</a></li>
-                        <li><a href="#">- ติดต่อสอบถาม</a></li>
+                        <li><a href="#">นโยบายความเป็นส่วนตัว</a></li>
+                        <li><a href="#">แผนผังเว็บไซต์</a></li>
+                        <li><a href="#">ติดต่อสอบถาม</a></li>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2026 สอค. สงวนลิขสิทธิ์ตามพระราชบัญญัติลิขสิทธิ์
-        </div>
+        <div class="footer-bottom">&copy; 2026 สำนักงานธนานุเคราะห์ สงวนลิขสิทธิ์ตามพระราชบัญญัติลิขสิทธิ์</div>
     </footer>
 
     <script>

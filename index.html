@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Layout สธค. (ปรับขนาดอักษรได้)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>สำนักงานธนานุเคราะห์ - หน้าหลัก (ปรับขนาดอักษรได้)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -12,7 +12,7 @@
     <header>
         <div class="container top-bar-flex">
             <div class="font-resizer">
-                ขนาดอักษร: 
+                <span>ขนาดอักษร:</span>
                 <button onclick="setFontSize('small')" title="ลดขนาด">ก-</button>
                 <button onclick="setFontSize('normal')" title="ขนาดปกติ">ก</button>
                 <button onclick="setFontSize('large')" title="เพิ่มขนาด">ก+</button>
@@ -26,9 +26,9 @@
     <div class="main-header">
         <div class="container header-flex">
             <div class="logo">
-                <img src="https://via.placeholder.com/150x60?text=LOGO" alt="Logo">
+                <img src="https://via.placeholder.com/180x60?text=LOGO" alt="Logo">
             </div>
-            <a href="#" class="login-btn">เข้าสู่ระบบ ⌵</a>
+            <a href="login.html" class="login-btn">เข้าสู่ระบบ ⌵</a>
         </div>
     </div>
 
@@ -37,7 +37,7 @@
     </section>
 
     <nav class="breadcrumb">
-        หน้าหลัก
+        <span class="current">หน้าหลัก</span>
     </nav>
 
     <main class="container">
@@ -47,50 +47,62 @@
             </div>
 
             <article class="card col-md-4">
-                <img src="picture/479929_0.jpg" class="card-img" alt="Enterprise">
+                <div class="card-img-wrapper">
+                    <img src="picture/479929_0.jpg" class="card-img" alt="Enterprise">
+                </div>
                 <div class="card-content">
                     <h3 class="card-title">นิคมสร้างตนเองตากฟ้า</h3>
-                    <a href="page2.html" class="read-more">เพิ่มเติม &rarr;</a>
+                    <a href="page2.html" class="read-more">เพิ่มเติม <span>&rarr;</span></a>
                 </div>
             </article>
 
             <article class="card col-md-4">
-                <img src="picture/479929_0.jpg" class="card-img" alt="Enterprise">
+                <div class="card-img-wrapper">
+                    <img src="picture/479929_0.jpg" class="card-img" alt="Enterprise">
+                </div>
                 <div class="card-content">
                     <h3 class="card-title">วิสาหกิจ 3</h3>
-                    <a href="#" class="read-more">เพิ่มเติม &rarr;</a>
+                    <a href="#" class="read-more">เพิ่มเติม <span>&rarr;</span></a>
                 </div>
             </article>
 
             <article class="card col-md-4">
-                <img src="picture/479929_0.jpg" class="card-img" alt="Enterprise">
+                <div class="card-img-wrapper">
+                    <img src="picture/479929_0.jpg" class="card-img" alt="Enterprise">
+                </div>
                 <div class="card-content">
                     <h3 class="card-title">วิสาหกิจ 4</h3>
-                    <a href="#" class="read-more">เพิ่มเติม &rarr;</a>
+                    <a href="#" class="read-more">เพิ่มเติม <span>&rarr;</span></a>
                 </div>
             </article>
 
-             <article class="card col-md-4">
-                <img src="picture/479929_0.jpg" class="card-img" alt="Enterprise">
+            <article class="card col-md-4">
+                <div class="card-img-wrapper">
+                    <img src="picture/479929_0.jpg" class="card-img" alt="Enterprise">
+                </div>
                 <div class="card-content">
                     <h3 class="card-title">นิคมสร้างตนเองตากฟ้า</h3>
-                    <a href="page2.html" class="read-more">เพิ่มเติม &rarr;</a>
+                    <a href="page2.html" class="read-more">เพิ่มเติม <span>&rarr;</span></a>
                 </div>
             </article>
 
             <article class="card col-md-4">
-                <img src="picture/479929_0.jpg" class="card-img" alt="Enterprise">
+                <div class="card-img-wrapper">
+                    <img src="picture/479929_0.jpg" class="card-img" alt="Enterprise">
+                </div>
                 <div class="card-content">
                     <h3 class="card-title">วิสาหกิจ 3</h3>
-                    <a href="#" class="read-more">เพิ่มเติม &rarr;</a>
+                    <a href="#" class="read-more">เพิ่มเติม <span>&rarr;</span></a>
                 </div>
             </article>
 
             <article class="card col-md-4">
-                <img src="picture/479929_0.jpg" class="card-img" alt="Enterprise">
+                <div class="card-img-wrapper">
+                    <img src="picture/479929_0.jpg" class="card-img" alt="Enterprise">
+                </div>
                 <div class="card-content">
                     <h3 class="card-title">วิสาหกิจ 4</h3>
-                    <a href="#" class="read-more">เพิ่มเติม &rarr;</a>
+                    <a href="#" class="read-more">เพิ่มเติม <span>&rarr;</span></a>
                 </div>
             </article>
         </div>
@@ -101,7 +113,7 @@
             <div class="row-12">
                 <div class="col-md-4">
                     <h3>เกี่ยวกับเรา</h3>
-                    <p>สำนักงานธนานุเคราะห์</p>
+                    <p>สำนักงานธนานุเคราะห์<br>ให้บริการด้วยความโปร่งใส ยุติธรรม และเป็นที่พึ่งของประชาชน</p>
                 </div>
                 <div class="col-md-4">
                     <h3>ติดต่อเรา</h3>
@@ -110,15 +122,15 @@
                 <div class="col-md-4">
                     <h3>ลิงก์ที่เกี่ยวข้อง</h3>
                     <ul>
-                        <li><a href="#">- นโยบายความเป็นส่วนตัว</a></li>
-                        <li><a href="#">- แผนผังเว็บไซต์</a></li>
-                        <li><a href="#">- ติดต่อสอบถาม</a></li>
+                        <li><a href="#">นโยบายความเป็นส่วนตัว</a></li>
+                        <li><a href="#">แผนผังเว็บไซต์</a></li>
+                        <li><a href="#">ติดต่อสอบถาม</a></li>
                     </ul>
                 </div>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2026 สอค. สงวนลิขสิทธิ์ตามพระราชบัญญัติลิขสิทธิ์
+            &copy; 2026 สำนักงานธนานุเคราะห์ สงวนลิขสิทธิ์ตามพระราชบัญญัติลิขสิทธิ์
         </div>
     </footer>
 

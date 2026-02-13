@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ระบบหลังบ้าน - สำนักงานธนานุเคราะห์</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="admin-body">
+
+    <aside class="admin-sidebar">
+        <div class="admin-brand">
+            <i class="fa-solid fa-building-columns"></i> สธค. ADMIN
+        </div>
+        <nav class="admin-nav">
+            <a href="#" class="active"><i class="fa-solid fa-chart-pie"></i> ภาพรวมระบบ</a>
+            <a href="#"><i class="fa-solid fa-store"></i> จัดการวิสาหกิจ/ชุมชน</a>
+            <a href="#"><i class="fa-solid fa-users"></i> จัดการผู้ใช้งาน</a>
+            <a href="#"><i class="fa-solid fa-newspaper"></i> จัดการข่าวสาร</a>
+            <a href="#"><i class="fa-solid fa-gear"></i> ตั้งค่าระบบ</a>
+            <a href="index.html" style="margin-top: 50px; color: #ff6b6b;"><i class="fa-solid fa-arrow-right-from-bracket"></i> ออกจากระบบ</a>
+        </nav>
+    </aside>
+
+    <main class="admin-main">
+        
+        <header class="admin-header">
+            <div class="admin-search">
+                <input type="text" placeholder="ค้นหาข้อมูล...">
+            </div>
+            <div class="admin-profile">
+                <span><i class="fa-regular fa-bell"></i></span>
+                <span>สวัสดี, แอดมิน</span>
+                <img src="https://via.placeholder.com/150" alt="Admin Profile">
+            </div>
+        </header>
+
+        <div class="admin-content">
+            <h1 class="admin-page-title">แดชบอร์ดภาพรวม</h1>
+
+            <div class="dash-cards">
+                <div class="dash-card gold">
+                    <div class="dash-card-icon">
+                        <i class="fa-solid fa-store"></i>
+                    </div>
+                    <div class="dash-card-info">
+                        <h4>วิสาหกิจทั้งหมด</h4>
+                        <h2>124</h2>
+                    </div>
+                </div>
+                
+                <div class="dash-card">
+                    <div class="dash-card-icon">
+                        <i class="fa-solid fa-users"></i>
+                    </div>
+                    <div class="dash-card-info">
+                        <h4>ผู้ใช้งานระบบ</h4>
+                        <h2>8,542</h2>
+                    </div>
+                </div>
+
+                <div class="dash-card green">
+                    <div class="dash-card-icon">
+                        <i class="fa-solid fa-check-circle"></i>
+                    </div>
+                    <div class="dash-card-info">
+                        <h4>รอการอนุมัติ</h4>
+                        <h2>12</h2>
+                    </div>
+                </div>
+            </div>
+
+            <div class="admin-panel">
+                <div class="admin-panel-header">
+                    <h3 class="admin-panel-title">รายการวิสาหกิจ/ชุมชน ล่าสุด</h3>
+                    <button class="btn-primary"><i class="fa-solid fa-plus"></i> เพิ่มข้อมูลใหม่</button>
+                </div>
+                
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>รหัส</th>
+                            <th>ชื่อวิสาหกิจ/ชุมชน</th>
+                            <th>จังหวัด</th>
+                            <th>สถานะ</th>
+                            <th>จัดการ</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#ENT-001</td>
+                            <td>นิคมสร้างตนเองตากฟ้า</td>
+                            <td>นครสวรรค์</td>
+                            <td><span class="status-badge status-active">เปิดเผยแพร่</span></td>
+                            <td class="action-links">
+                                <a href="#" title="ดูรายละเอียด"><i class="fa-solid fa-eye"></i></a>
+                                <a href="#" title="แก้ไข"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="#" title="ลบ" style="color: #ff4757;"><i class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ENT-002</td>
+                            <td>วิสาหกิจชุมชนผ้าทอมือ</td>
+                            <td>เชียงใหม่</td>
+                            <td><span class="status-badge status-pending">รอตรวจสอบ</span></td>
+                            <td class="action-links">
+                                <a href="#" title="ดูรายละเอียด"><i class="fa-solid fa-eye"></i></a>
+                                <a href="#" title="แก้ไข"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="#" title="ลบ" style="color: #ff4757;"><i class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#ENT-003</td>
+                            <td>กลุ่มเกษตรอินทรีย์วิถีไทย</td>
+                            <td>ขอนแก่น</td>
+                            <td><span class="status-badge status-active">เปิดเผยแพร่</span></td>
+                            <td class="action-links">
+                                <a href="#" title="ดูรายละเอียด"><i class="fa-solid fa-eye"></i></a>
+                                <a href="#" title="แก้ไข"><i class="fa-solid fa-pen-to-square"></i></a>
+                                <a href="#" title="ลบ" style="color: #ff4757;"><i class="fa-solid fa-trash"></i></a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div style="text-align: center; padding-top: 20px; border-top: 1px solid #eee; margin-top: 40px; color: #888; font-size: 0.85rem;">
+                &copy; 2026 สำนักงานธนานุเคราะห์ สงวนลิขสิทธิ์ตามพระราชบัญญัติลิขสิทธิ์
+            </div>
+
+        </div>
+    </main>
+
+</body>
+</html>
