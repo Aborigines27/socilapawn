@@ -5,241 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Layout รายละเอียดนิคม - สอค. (ปรับขนาดอักษรได้)</title>
     <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --main-blue: #004a99;
-            --dark-blue: #003366;
-            --accent-yellow: #ffcc00;
-            --text-gray: #444;
-            --light-bg: #f9f9f9;
-        }
-
-        /* --- Global Accessibility Setup --- */
-        html {
-            font-size: 100%; /* Base size */
-            transition: font-size 0.3s ease; /* Smooth resizing */
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Prompt', sans-serif;
-        }
-
-        body {
-            background-color: #fff;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-            font-size: 1rem; /* 16px Default */
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 15px;
-            width: 100%;
-        }
-
-        /* --- 12-Column Grid --- */
-        .row-12 {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 20px;
-        }
-
-        .col-3 { grid-column: span 3; }
-        .col-4 { grid-column: span 4; }
-        .col-8 { grid-column: span 8; }
-        .col-12 { grid-column: span 12; }
-
-        @media (max-width: 768px) {
-            .col-4, .col-8, .col-3 { grid-column: span 12; }
-            /* ปรับให้แสดงผลได้ดีขึ้นในมือถือเมื่อขยายอักษร */
-            .title-left { text-align: left !important; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        }
-
-        /* --- Header & Controls --- */
-        header { 
-            background-color: #444; 
-            color: white; 
-            padding: 8px 0; 
-            font-size: 0.75rem; /* 12px -> 0.75rem */
-        }
-
-        .top-header-flex {
-            display: flex;
-            justify-content: flex-end; /* ชิดขวา */
-            align-items: center;
-            gap: 20px; /* ระยะห่างระหว่างปุ่มปรับขนาดกับเมนู */
-        }
-
-        /* ปุ่มปรับขนาดฟอนต์ (Style เดียวกับหน้าแรก) */
-        .font-resizer {
-            display: inline-flex;
-            gap: 5px;
-            background: rgba(255,255,255,0.1);
-            padding: 2px 8px;
-            border-radius: 4px;
-            align-items: center;
-        }
-
-        .font-resizer span { margin-right: 5px; color: #ccc; }
-
-        .font-resizer button {
-            background: none;
-            border: 1px solid #ccc;
-            color: white;
-            cursor: pointer;
-            font-family: 'Prompt', sans-serif;
-            width: 24px;
-            height: 24px;
-            border-radius: 3px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.75rem;
-        }
-
-        .font-resizer button:hover {
-            background-color: var(--accent-yellow);
-            color: #000;
-            border-color: var(--accent-yellow);
-        }
-
-        .main-header { background-color: white; padding: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
-        .header-flex { display: flex; justify-content: space-between; align-items: center; }
-        
-        .login-btn { 
-            background-color: var(--accent-yellow); 
-            padding: 8px 15px; 
-            border-radius: 5px; 
-            text-decoration: none; 
-            color: black; 
-            font-weight: bold; 
-            font-size: 1rem;
-        }
-
-        .hero img { width: 100%; height: 350px; object-fit: cover; display: block; }
-
-        .breadcrumb {
-            text-align: center;
-            padding: 15px;
-            background: white;
-            border-bottom: 1px solid #ddd;
-            margin-bottom: 40px;
-            font-size: 1rem;
-        }
-        .breadcrumb a { text-decoration: none; color: inherit; }
-        .breadcrumb span {
-            border-bottom: 3px solid var(--accent-yellow);
-            padding-bottom: 10px;
-            font-weight: bold;
-        }
-
-        /* --- Content Section (Converted to rem) --- */
-        .content-section { margin-bottom: 40px; }
-        
-        .title-left {
-            color: var(--main-blue);
-            font-size: 1.375rem; /* 22px -> ~1.375rem */
-            font-weight: 600;
-            text-align: right;
-            padding-right: 20px;
-            line-height: 1.4;
-        }
-
-        .details-right {
-            color: var(--main-blue);
-            font-weight: 600;
-        }
-
-        .details-right p { 
-            margin-bottom: 10px; 
-            font-size: 1.125rem; /* 18px -> 1.125rem */
-            line-height: 1.6;
-        }
-
-        .bullet-list {
-            margin-top: 20px;
-            list-style: none;
-            color: var(--main-blue);
-            font-weight: 400;
-            font-size: 0.9375rem; /* 15px -> ~0.9375rem */
-        }
-
-        .bullet-list li {
-            position: relative;
-            padding-left: 25px;
-            margin-bottom: 15px;
-            line-height: 1.6;
-        }
-
-        .bullet-list li::before {
-            content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--main-blue);
-            font-size: 1.5rem; /* 25px -> 1.5rem */
-            line-height: 1;
-            top: -2px;
-        }
-
-        /* --- Gallery Section --- */
-        .gallery-item {
-            width: 100%;
-            height: 180px;
-            overflow: hidden;
-            border-radius: 4px;
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s;
-        }
-        
-        .gallery-item img:hover { transform: scale(1.1); }
-
-        .plus-btn {
-            background-color: #b0b8c1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-            transition: 0.3s;
-        }
-        .plus-btn:hover { background-color: #9aa5b1; }
-
-        .plus-btn i {
-            color: var(--main-blue);
-            font-size: 2.5rem; /* 40px -> 2.5rem */
-            font-weight: bold;
-            font-style: normal;
-        }
-
-        /* --- Footer --- */
-        footer {
-            background-color: var(--main-blue);
-            color: white;
-            padding: 40px 0 0;
-            margin-top: auto;
-        }
-        
-        footer h3 {
-            font-size: 1.125rem;
-            margin-bottom: 15px;
-        }
-
-        .footer-bottom {
-            background-color: var(--dark-blue);
-            text-align: center;
-            padding: 15px;
-            font-size: 0.8125rem; /* 13px */
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -305,41 +71,38 @@
 
     <footer>
         <div class="container">
-            <div class="row-12" style="padding-bottom: 30px;">
-                <div class="col-4"><h3>เกี่ยวกับเรา</h3></div>
-                <div class="col-4"><h3>ติดต่อเรา</h3></div>
-                <div class="col-4"><h3>ลิงก์ที่เกี่ยวข้อง</h3></div>
+            <div class="row-12">
+                <div class="col-md-4">
+                    <h3>เกี่ยวกับเรา</h3>
+                    <p>สำนักงานธนานุเคราะห์</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>ติดต่อเรา</h3>
+                    <p>โทรศัพท์: 02-xxx-xxxx<br>อีเมล: info@example.go.th</p>
+                </div>
+                <div class="col-md-4">
+                    <h3>ลิงก์ที่เกี่ยวข้อง</h3>
+                    <ul>
+                        <li><a href="#">- นโยบายความเป็นส่วนตัว</a></li>
+                        <li><a href="#">- แผนผังเว็บไซต์</a></li>
+                        <li><a href="#">- ติดต่อสอบถาม</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="footer-bottom">© 2026 สอค. สงวนลิขสิทธิ์ตามพระราชบัญญัติลิขสิทธิ์</div>
+        <div class="footer-bottom">
+            &copy; 2026 สอค. สงวนลิขสิทธิ์ตามพระราชบัญญัติลิขสิทธิ์
+        </div>
     </footer>
 
     <script>
         function setFontSize(size) {
             const htmlElement = document.documentElement;
             let newSize = '100%';
-
-            if (size === 'small') {
-                newSize = '85%';
-            } else if (size === 'large') {
-                newSize = '120%';
-            } else {
-                newSize = '100%';
-            }
-
+            if (size === 'small') newSize = '85%';
+            else if (size === 'large') newSize = '120%';
             htmlElement.style.fontSize = newSize;
-            
-            // แนะนำ: หากต้องการให้จำค่าข้ามหน้าได้ ให้เปิดบรรทัดด้านล่างนี้
-            // localStorage.setItem('preferred-font-size', size);
         }
-
-        // โหลดค่าเดิม (ถ้ามี)
-        /*
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedSize = localStorage.getItem('preferred-font-size');
-            if (savedSize) setFontSize(savedSize);
-        });
-        */
     </script>
 
 </body>
