@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>รายละเอียดวิสาหกิจ - สอค. (ตามแบบ)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>Layout รายละเอียดนิคม - สอค. (ปรับขนาดอักษรได้)</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
             --main-blue: #004a99;
@@ -12,13 +12,12 @@
             --accent-yellow: #ffcc00;
             --text-gray: #444;
             --light-bg: #f9f9f9;
-            --menu-grey: #e0e0e0;
         }
 
-        /* --- Global Accessibility Setup (เหมือนเดิม) --- */
+        /* --- Global Accessibility Setup --- */
         html {
-            font-size: 100%;
-            transition: font-size 0.3s ease;
+            font-size: 100%; /* Base size */
+            transition: font-size 0.3s ease; /* Smooth resizing */
         }
 
         * {
@@ -33,7 +32,7 @@
             display: flex;
             flex-direction: column;
             min-height: 100vh;
-            font-size: 1rem;
+            font-size: 1rem; /* 16px Default */
         }
 
         .container {
@@ -43,37 +42,40 @@
             width: 100%;
         }
 
-        /* --- Grid System Updated --- */
+        /* --- 12-Column Grid --- */
         .row-12 {
             display: grid;
             grid-template-columns: repeat(12, 1fr);
-            gap: 30px; /* เพิ่มระยะห่างระหว่างคอลัมน์ */
+            gap: 20px;
         }
 
         .col-3 { grid-column: span 3; }
-        .col-9 { grid-column: span 9; } /* เพิ่ม col-9 สำหรับเนื้อหาหลัก */
+        .col-4 { grid-column: span 4; }
+        .col-8 { grid-column: span 8; }
         .col-12 { grid-column: span 12; }
 
-        @media (max-width: 992px) {
-            /* บนมือถือ/แท็บเล็ต ให้เรียงซ้อนกัน */
-            .col-3, .col-9 { grid-column: span 12; }
+        @media (max-width: 768px) {
+            .col-4, .col-8, .col-3 { grid-column: span 12; }
+            /* ปรับให้แสดงผลได้ดีขึ้นในมือถือเมื่อขยายอักษร */
+            .title-left { text-align: left !important; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
         }
 
-        /* --- Header & Hero (เหมือนเดิม) --- */
+        /* --- Header & Controls --- */
         header { 
             background-color: #444; 
             color: white; 
             padding: 8px 0; 
-            font-size: 0.75rem;
+            font-size: 0.75rem; /* 12px -> 0.75rem */
         }
 
         .top-header-flex {
             display: flex;
-            justify-content: flex-end;
+            justify-content: flex-end; /* ชิดขวา */
             align-items: center;
-            gap: 20px;
+            gap: 20px; /* ระยะห่างระหว่างปุ่มปรับขนาดกับเมนู */
         }
 
+        /* ปุ่มปรับขนาดฟอนต์ (Style เดียวกับหน้าแรก) */
         .font-resizer {
             display: inline-flex;
             gap: 5px;
@@ -82,17 +84,42 @@
             border-radius: 4px;
             align-items: center;
         }
+
         .font-resizer span { margin-right: 5px; color: #ccc; }
+
         .font-resizer button {
-            background: none; border: 1px solid #ccc; color: white; cursor: pointer;
-            font-family: 'Prompt', sans-serif; width: 24px; height: 24px; border-radius: 3px;
-            display: flex; align-items: center; justify-content: center; font-size: 0.75rem;
+            background: none;
+            border: 1px solid #ccc;
+            color: white;
+            cursor: pointer;
+            font-family: 'Prompt', sans-serif;
+            width: 24px;
+            height: 24px;
+            border-radius: 3px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.75rem;
         }
-        .font-resizer button:hover { background-color: var(--accent-yellow); color: #000; border-color: var(--accent-yellow); }
+
+        .font-resizer button:hover {
+            background-color: var(--accent-yellow);
+            color: #000;
+            border-color: var(--accent-yellow);
+        }
 
         .main-header { background-color: white; padding: 15px 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
         .header-flex { display: flex; justify-content: space-between; align-items: center; }
-        .login-btn { background-color: var(--accent-yellow); padding: 8px 15px; border-radius: 5px; text-decoration: none; color: black; font-weight: bold; font-size: 1rem; }
+        
+        .login-btn { 
+            background-color: var(--accent-yellow); 
+            padding: 8px 15px; 
+            border-radius: 5px; 
+            text-decoration: none; 
+            color: black; 
+            font-weight: bold; 
+            font-size: 1rem;
+        }
 
         .hero img { width: 100%; height: 350px; object-fit: cover; display: block; }
 
@@ -104,113 +131,65 @@
             margin-bottom: 40px;
             font-size: 1rem;
         }
+        .breadcrumb a { text-decoration: none; color: inherit; }
         .breadcrumb span {
             border-bottom: 3px solid var(--accent-yellow);
             padding-bottom: 10px;
             font-weight: bold;
         }
 
-        /* --- NEW: Sidebar Menu Styles --- */
-        .sidebar-title {
+        /* --- Content Section (Converted to rem) --- */
+        .content-section { margin-bottom: 40px; }
+        
+        .title-left {
             color: var(--main-blue);
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-align: center;
-        }
-
-        .menu-tabs {
-            display: flex;
-            flex-direction: column;
-            gap: 1px;
-        }
-
-        .menu-tab {
-            display: block;
-            padding: 12px 20px;
-            text-align: center;
-            text-decoration: none;
+            font-size: 1.375rem; /* 22px -> ~1.375rem */
             font-weight: 600;
-            font-size: 1rem;
-            color: var(--main-blue);
-            transition: 0.3s;
-        }
-
-        /* สไตล์ตามภาพ: อันบนสีเทา อันล่างสีเหลือง */
-        .menu-tab.grey-tab {
-            background-color: var(--menu-grey);
-            color: #666;
-        }
-        
-        .menu-tab.yellow-tab {
-            background-color: var(--accent-yellow);
-            color: var(--main-blue);
-        }
-        
-        .menu-tab:hover {
-            opacity: 0.9;
-        }
-
-
-        /* --- NEW: Info Grid Styles (ตารางข้อมูล) --- */
-        .info-grid-container {
-            display: grid;
-            /* กำหนดคอลัมน์: ป้ายชื่อ (auto) | เครื่องหมาย : (auto) | ข้อมูล (1fr ที่เหลือ) */
-            grid-template-columns: auto auto 1fr;
-            row-gap: 15px;
-            column-gap: 15px;
-            margin-bottom: 40px;
-            align-items: baseline; /* จัดให้บรรทัดตรงกัน */
-        }
-
-        .info-label {
-            font-weight: 700;
-            color: var(--main-blue);
-            font-size: 1.125rem; /* 18px */
             text-align: right;
+            padding-right: 20px;
+            line-height: 1.4;
         }
-        
-        .info-separator {
+
+        .details-right {
             color: var(--main-blue);
-            font-weight: 700;
+            font-weight: 600;
         }
 
-        .info-value {
-            font-size: 1.125rem; /* 18px */
-            color: #333;
-            font-weight: 500;
+        .details-right p { 
+            margin-bottom: 10px; 
+            font-size: 1.125rem; /* 18px -> 1.125rem */
+            line-height: 1.6;
         }
 
-        .info-value.highlight {
+        .bullet-list {
+            margin-top: 20px;
+            list-style: none;
             color: var(--main-blue);
-            font-weight: 700;
-            font-size: 1.25rem; /* 20px ใหญ่ขึ้นนิดหน่อยสำหรับชื่อ */
+            font-weight: 400;
+            font-size: 0.9375rem; /* 15px -> ~0.9375rem */
         }
 
-        .section-divider {
-            border: none;
-            border-top: 1px solid #ddd;
-            margin: 30px 0;
+        .bullet-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+            line-height: 1.6;
         }
 
-        .content-heading {
+        .bullet-list li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
             color: var(--main-blue);
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 25px;
+            font-size: 1.5rem; /* 25px -> 1.5rem */
+            line-height: 1;
+            top: -2px;
         }
 
-        /* --- Gallery Section (ปรับปรุงเล็กน้อย) --- */
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr); /* 4 รูปต่อแถว */
-            gap: 20px;
-            margin-top: 30px;
-        }
-
+        /* --- Gallery Section --- */
         .gallery-item {
             width: 100%;
-            height: 180px; /* ความสูงคงที่ */
+            height: 180px;
             overflow: hidden;
             border-radius: 4px;
         }
@@ -218,7 +197,7 @@
         .gallery-item img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* รูปเต็มพื้นที่ไม่บิดเบี้ยว */
+            object-fit: cover;
             transition: transform 0.3s;
         }
         
@@ -236,33 +215,30 @@
 
         .plus-btn i {
             color: var(--main-blue);
-            font-size: 3rem;
+            font-size: 2.5rem; /* 40px -> 2.5rem */
             font-weight: bold;
             font-style: normal;
         }
 
-        @media (max-width: 768px) {
-            .gallery-grid {
-                 grid-template-columns: repeat(2, 1fr); /* มือถือเหลือ 2 รูปต่อแถว */
-            }
-            .info-grid-container {
-                 grid-template-columns: 1fr; /* มือถือเรียงลงมา */
-                 row-gap: 5px;
-            }
-            .info-label { text-align: left; }
-            .info-separator { display: none; /* ซ่อนเครื่องหมาย : บนมือถือ */ }
-            .info-value { margin-bottom: 10px; }
-        }
-
-        /* --- Footer (เหมือนเดิม) --- */
+        /* --- Footer --- */
         footer {
             background-color: var(--main-blue);
             color: white;
             padding: 40px 0 0;
             margin-top: auto;
         }
-        footer h3 { font-size: 1.125rem; margin-bottom: 15px; }
-        .footer-bottom { background-color: var(--dark-blue); text-align: center; padding: 15px; font-size: 0.8125rem; }
+        
+        footer h3 {
+            font-size: 1.125rem;
+            margin-bottom: 15px;
+        }
+
+        .footer-bottom {
+            background-color: var(--dark-blue);
+            text-align: center;
+            padding: 15px;
+            font-size: 0.8125rem; /* 13px */
+        }
     </style>
 </head>
 <body>
@@ -275,6 +251,7 @@
                 <button onclick="setFontSize('normal')" title="ขนาดปกติ">ก</button>
                 <button onclick="setFontSize('large')" title="เพิ่มขนาด">ก+</button>
             </div>
+            
             <div>คำถามที่พบบ่อย | ติดต่อเรา | Search | TH 🇹🇭</div>
         </div>
     </header>
@@ -291,70 +268,47 @@
     </section>
 
     <nav class="breadcrumb">
-        <span>หน้าหลัก</span>
+        <a href="index.html"><span>หน้าหลัก</span></a> &nbsp;/&nbsp; รายละเอียด
     </nav>
 
-    <main class="container" style="margin-bottom: 60px;">
-        <div class="row-12">
-            <aside class="col-3">
-                <h2 class="sidebar-title">วิสาหกิจ/ชุมชน</h2>
-                <div class="menu-tabs">
-                    <a href="enterprise.html" class="menu-tab grey-tab">วิสาหกิจ</a>
-                    <a href="#" class="menu-tab yellow-tab">สินค้าแนะนำ</a>
-                </div>
-            </aside>
-
-            <section class="col-9">
-                <div class="info-grid-container">
-                    <div class="info-label">ชื่อวิสาหกิจ</div>
-                    <div class="info-separator">:</div>
-                    <div class="info-value highlight">วิสาหกิจชุมชนแม่บ้านวังหัวดอย จังหวัดอุตรดิตถ์</div>
-
-                    <div class="info-label">จำนวนสมาชิก</div>
-                    <div class="info-separator">:</div>
-                    <div class="info-value">21 คน</div>
-
-                    <div class="info-label">เบอร์ติดต่อ</div>
-                    <div class="info-separator">:</div>
-                    <div class="info-value">093-1987338 , 085-2697757</div>
-
-                    <div class="info-label">Social Media</div>
-                    <div class="info-separator">:</div>
-                    <div class="info-value">Facebook น้ำพริกวังดอย</div>
-
-                    <div class="info-label">ราคาสินค้า</div>
-                    <div class="info-separator">:</div>
-                    <div class="info-value">55 - 60 บาท</div>
-                </div>
-
-                <hr class="section-divider">
-
-                <h3 class="content-heading">คำอธิบายสินค้า / บริการ</h3>
+    <main class="container">
+        <div class="row-12 content-section">
+            <div class="col-4 title-left">
+                นิคมสร้างตนเองตากฟ้า<br>จังหวัดนครสวรรค์
+            </div>
+            <div class="col-8 details-right">
+                <p>ชื่อผลิตภัณฑ์/บริการ : ยาหม่องไพล , น้ำมันไพล , ผงพอกเข่า , นวดผ่อนคลาย</p>
+                <p>เบอร์โทรศัพท์ : 02-281-7500</p>
                 
-                <div class="gallery-grid">
-                    <div class="gallery-item">
-                        <img src="picture/479929_0.jpg" alt="Product Image 1">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="picture/479929_0.jpg" alt="Product Image 2">
-                    </div>
-                    <div class="gallery-item">
-                        <img src="picture/479929_0.jpg" alt="Product Image 3">
-                    </div>
-                    <div class="gallery-item plus-btn">
-                        <i>+</i>
-                    </div>
-                </div>
-            </section>
+                <ul class="bullet-list">
+                    <li>ขับเคลื่อนตามแนวทาง “สร้างงาน สร้างรายได้ พัฒนาคุณภาพชีวิตคนเปราะบาง” เพื่อส่งเสริมและสนับสนุนให้สมาชิกนิคมและราษฎร สามารถประกอบอาชีพเป็นหลักแหล่ง ตลอดจนพัฒนาคุณภาพชีวิต ทั้งทางเศรษฐกิจ สังคม และสิ่งแวดล้อม ควบคู่ไปกับการพัฒนาทุนมนุษย์ในศตวรรษที่ 21 และแก้ไขปัญหาความยากจนข้ามรุ่นให้กับสมาชิก</li>
+                    <li>ขับเคลื่อนตามแนวทาง “สร้างงาน สร้างรายได้ พัฒนาคุณภาพชีวิตคนเปราะบาง” เพื่อส่งเสริมและสนับสนุนให้สมาชิกนิคมและราษฎร สามารถประกอบอาชีพเป็นหลักแหล่ง ตลอดจนพัฒนาคุณภาพชีวิต ทั้งทางเศรษฐกิจ สังคม และสิ่งแวดล้อม ควบคู่ไปกับการพัฒนาทุนมนุษย์ในศตวรรษที่ 21 และแก้ไขปัญหาความยากจนข้ามรุ่นให้กับสมาชิก</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="row-12" style="margin-bottom: 60px;">
+            <div class="col-3 gallery-item">
+                <img src="picture/479929_0.jpg" alt="Gallery Image 1">
+            </div>
+            <div class="col-3 gallery-item">
+                <img src="picture/479929_0.jpg" alt="Gallery Image 2">
+            </div>
+            <div class="col-3 gallery-item">
+                <img src="picture/479929_0.jpg" alt="Gallery Image 3">
+            </div>
+            <div class="col-3 gallery-item plus-btn">
+                <i>+</i>
+            </div>
         </div>
     </main>
 
     <footer>
         <div class="container">
             <div class="row-12" style="padding-bottom: 30px;">
-                <div class="col-3"><h3>เกี่ยวกับเรา</h3></div>
-                <div class="col-3"><h3>ติดต่อเรา</h3></div>
-                <div class="col-3"><h3>ลิงก์ที่เกี่ยวข้อง</h3></div>
+                <div class="col-4"><h3>เกี่ยวกับเรา</h3></div>
+                <div class="col-4"><h3>ติดต่อเรา</h3></div>
+                <div class="col-4"><h3>ลิงก์ที่เกี่ยวข้อง</h3></div>
             </div>
         </div>
         <div class="footer-bottom">© 2026 สอค. สงวนลิขสิทธิ์ตามพระราชบัญญัติลิขสิทธิ์</div>
@@ -364,11 +318,22 @@
         function setFontSize(size) {
             const htmlElement = document.documentElement;
             let newSize = '100%';
-            if (size === 'small') newSize = '85%';
-            else if (size === 'large') newSize = '120%';
+
+            if (size === 'small') {
+                newSize = '85%';
+            } else if (size === 'large') {
+                newSize = '120%';
+            } else {
+                newSize = '100%';
+            }
+
             htmlElement.style.fontSize = newSize;
-            // localStorage.setItem('preferred-font-size', size); // เปิดใช้ถ้าต้องการจำค่า
+            
+            // แนะนำ: หากต้องการให้จำค่าข้ามหน้าได้ ให้เปิดบรรทัดด้านล่างนี้
+            // localStorage.setItem('preferred-font-size', size);
         }
+
+        // โหลดค่าเดิม (ถ้ามี)
         /*
         document.addEventListener('DOMContentLoaded', () => {
             const savedSize = localStorage.getItem('preferred-font-size');
