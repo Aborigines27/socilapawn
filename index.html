@@ -3,30 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>สำนักงานธนานุเคราะห์ - หน้าหลัก (ปรับขนาดอักษรได้)</title>
-    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <title>แพลตฟอร์มเพื่อสังคม - หน้าหลัก</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <header>
-        <div class="container top-bar-flex">
+        <div class="container top-header-flex">
             <div class="font-resizer">
                 <span>ขนาดอักษร:</span>
                 <button onclick="setFontSize('small')" title="ลดขนาด">ก-</button>
                 <button onclick="setFontSize('normal')" title="ขนาดปกติ">ก</button>
                 <button onclick="setFontSize('large')" title="เพิ่มขนาด">ก+</button>
             </div>
-            <div>
-                คำถามที่พบบ่อย | ติดต่อเรา | Search | TH 🇹🇭
-            </div>
+            <div>คำถามที่พบบ่อย | ติดต่อเรา | Search | TH 🇹🇭</div>
         </div>
     </header>
 
     <div class="main-header">
         <div class="container header-flex">
             <div class="logo">
-                <img src="https://via.placeholder.com/180x60?text=LOGO" alt="Logo">
+                <a href="index.html"><img src="https://via.placeholder.com/150x50?text=LOGO" alt="Logo"></a>
             </div>
             <a href="login.html" class="login-btn">เข้าสู่ระบบ ⌵</a>
         </div>
@@ -37,72 +35,20 @@
     </section>
 
     <nav class="breadcrumb">
-        <span class="current">หน้าหลัก</span>
+        <div class="container">
+            <span class="current">หน้าหลัก</span>
+        </div>
     </nav>
 
-    <main class="container">
+    <main class="container" style="margin-bottom: 60px;">
+        <h2 class="section-title">วิสาหกิจ/ชุมชน</h2>
         <div class="row-12">
-            <div class="col-12">
-                <h2 class="section-title">วิสาหกิจ/ชุมชน</h2>
-            </div>
-
-            <article class="card col-md-4">
-                <div class="card-img-wrapper">
-                    <img src="picture/479929_0.jpg" class="card-img" alt="Enterprise">
-                </div>
+            
+            <article class="card col-4">
+                <div class="card-img-wrapper"><img src="picture/S__92954681_0_0.jpg" class="card-img" alt="Enterprise"></div>
                 <div class="card-content">
-                    <h3 class="card-title">นิคมสร้างตนเองตากฟ้า</h3>
-                    <a href="page2.html" class="read-more">เพิ่มเติม <span>&rarr;</span></a>
-                </div>
-            </article>
-
-            <article class="card col-md-4">
-                <div class="card-img-wrapper">
-                    <img src="picture/479929_0.jpg" class="card-img" alt="Enterprise">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">วิสาหกิจ 3</h3>
-                    <a href="#" class="read-more">เพิ่มเติม <span>&rarr;</span></a>
-                </div>
-            </article>
-
-            <article class="card col-md-4">
-                <div class="card-img-wrapper">
-                    <img src="picture/479929_0.jpg" class="card-img" alt="Enterprise">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">วิสาหกิจ 4</h3>
-                    <a href="#" class="read-more">เพิ่มเติม <span>&rarr;</span></a>
-                </div>
-            </article>
-
-            <article class="card col-md-4">
-                <div class="card-img-wrapper">
-                    <img src="picture/479929_0.jpg" class="card-img" alt="Enterprise">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">นิคมสร้างตนเองตากฟ้า</h3>
-                    <a href="page2.html" class="read-more">เพิ่มเติม <span>&rarr;</span></a>
-                </div>
-            </article>
-
-            <article class="card col-md-4">
-                <div class="card-img-wrapper">
-                    <img src="picture/479929_0.jpg" class="card-img" alt="Enterprise">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">วิสาหกิจ 3</h3>
-                    <a href="#" class="read-more">เพิ่มเติม <span>&rarr;</span></a>
-                </div>
-            </article>
-
-            <article class="card col-md-4">
-                <div class="card-img-wrapper">
-                    <img src="picture/479929_0.jpg" class="card-img" alt="Enterprise">
-                </div>
-                <div class="card-content">
-                    <h3 class="card-title">วิสาหกิจ 4</h3>
-                    <a href="#" class="read-more">เพิ่มเติม <span>&rarr;</span></a>
+                    <h3 class="card-title">กลุ่มวิสาหกิจชุมชนแม่บ้านวังหัวดอย</h3>
+                    <a href="page2.html" class="read-more">ดูรายละเอียด &rarr;</a>
                 </div>
             </article>
         </div>
@@ -110,16 +56,16 @@
 
     <footer>
         <div class="container">
-            <div class="row-12">
-                <div class="col-md-4">
+            <div class="footer-grid">
+                <div>
                     <h3>เกี่ยวกับเรา</h3>
                     <p>สำนักงานธนานุเคราะห์<br>ให้บริการด้วยความโปร่งใส ยุติธรรม และเป็นที่พึ่งของประชาชน</p>
                 </div>
-                <div class="col-md-4">
+                <div>
                     <h3>ติดต่อเรา</h3>
                     <p>โทรศัพท์: 02-xxx-xxxx<br>อีเมล: info@example.go.th</p>
                 </div>
-                <div class="col-md-4">
+                <div>
                     <h3>ลิงก์ที่เกี่ยวข้อง</h3>
                     <ul>
                         <li><a href="#">นโยบายความเป็นส่วนตัว</a></li>
@@ -129,20 +75,14 @@
                 </div>
             </div>
         </div>
-        <div class="footer-bottom">
-            &copy; 2026 สำนักงานธนานุเคราะห์ สงวนลิขสิทธิ์ตามพระราชบัญญัติลิขสิทธิ์
-        </div>
+        <div class="footer-bottom">&copy; 2026 สำนักงานธนานุเคราะห์ สงวนลิขสิทธิ์ตามพระราชบัญญัติลิขสิทธิ์</div>
     </footer>
 
     <script>
         function setFontSize(size) {
-            const htmlElement = document.documentElement;
-            let newSize = '100%';
-            if (size === 'small') newSize = '85%';
-            else if (size === 'large') newSize = '120%';
-            htmlElement.style.fontSize = newSize;
+            const html = document.documentElement;
+            html.style.fontSize = size === 'small' ? '85%' : size === 'large' ? '120%' : '100%';
         }
     </script>
-
 </body>
 </html>
